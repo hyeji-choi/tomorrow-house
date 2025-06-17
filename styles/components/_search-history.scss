@@ -27,12 +27,17 @@
     @include flexbox(between);
     position: relative;
 
+    &:hover {
+      background-color: $background;
+    }
+
     .word-button {
       @include text-style(16, $primary);
       width: 100%;
       padding: 10px $close-button-size 10px 8px;
-      text-align: left;
       font-weight: 400;
+      text-align: left;
+      border-radius: 2px;
     }
 
     .delete-button {
@@ -44,6 +49,10 @@
       height: $close-button-size;
       font-size: 16px;
       color: $tertiary;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 }
