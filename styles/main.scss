@@ -3,6 +3,7 @@
 @import './constants/breakpoints';
 @import './constants/box-shadows';
 @import './constants/z-indexes';
+@import './constants/dimensions';
 
 @import './base/fonts';
 @import './base/normalize';
@@ -19,7 +20,7 @@
 @import './modules/avatars';
 @import './modules/star-ratings';
 @import './modules/prices';
-@import './modules/buttons.scss';
+@import './modules/buttons';
 @import './modules/forms';
 @import './modules/pagination';
 @import './modules/icons';
@@ -36,4 +37,5 @@
 @import './layouts/overlay';
 @import './layouts/search-modal';
 @import './layouts/lnb';
+@import './layouts/global-header';
 @import './layouts/global-footer';
