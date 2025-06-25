@@ -50,7 +50,14 @@
     }
 
     p {
+      @include flexbox(start);
       color: $primary;
+
+      .ic-lock {
+        margin-right: 8px;
+        color: $tertiary;
+        font-size: 16px;
+      }
     }
   }
 
