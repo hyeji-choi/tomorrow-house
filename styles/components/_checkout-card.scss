@@ -1,8 +1,13 @@
 .checkout-card {
   position: relative;
   padding: 8px 10px 8px 12px;
+  margin-bottom: 8px;
   background-color: $background;
   border-radius: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   .checkout-header {
     margin-bottom: 8px;
