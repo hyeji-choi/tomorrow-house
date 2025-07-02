@@ -1,11 +1,15 @@
 {
   "name": "tomorrow-house",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "node-sass": "node-sass",
-    "sass": "node-sass -wr --source-map true styles/main.scss style.css"
+    "sass": "node-sass -wr --source-map true styles/main.scss style.css",
+    "sass:build": "node-sass -r --source-map true styles/main.scss style.css",
+    "build": "node ./scripts/build.js",
+    "deploy": "npm run sass:build && npm run build && node ./scripts/deploy.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +18,14 @@
   "dependencies": {
     "node-sass": "^9.0.0",
     "tiny-slider": "^2.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "fs-extra": "^11.3.0",
+    "gh-pages": "^6.3.0",
+    "imagemin": "^9.0.1",
+    "imagemin-jpegtran": "^8.0.0",
+    "postcss": "^8.5.6"
   }
 }
