@@ -34,3 +34,33 @@ productTabButtonList.forEach((button) => {
   button.addEventListener('click', toggleActiveTab)
   button.addEventListener('click', scrollToTabPanel)
 })
+
+// 사전정보: 각 tabPanel의 y축 위치(문서의 시작점부터 얼마나 아래에 있는지)
+// 요소의 y축 위치: window.scrollY + element.getBoundingClientRect().top
+const productTabPanelIdList = [
+  'product-spec',
+  'product-review',
+  'product-inquiry',
+  'product-shipment',
+  'product-recommendation',
+]
+
+const productTabPanelList = productTabPanelIdList.map((panelId) => {
+  const tabPanel = document.querySelector(`#${panelId}`)
+  return tabPanel
+})
+
+const productTabPanelPositionMap = {}
+
+function detectTabPanelPosition() {
+  // 각각의 tabPanel의 y축 위치를 찾는다
+  // productTabPanelPositionMap에 그 값을 업데이트
+  productTabPanelList.forEach((panel) => {
+    const id = panel.getAttribute('id')
+    const position = window.scrollY + panel.getBoundingClientRect().top
+    productTabPanelPositionMap[id] = position
+  })
+}
+
+window.addEventListener('load', detectTabPanelPosition)
+window.addEventListener('resize', detectTabPanelPosition)
